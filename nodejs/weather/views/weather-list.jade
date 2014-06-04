@@ -1,0 +1,48 @@
+extends layout
+
+block content
+
+
+    div 
+       div.sidebyside
+          h2 Location  :
+          br
+          span.icon Weather Icon  :
+          span Weather  :
+          br
+          span Temperature  :
+          br
+          span Time  :
+          br
+          span Feels like  :
+          br
+          span Relative humidity  :
+          br
+          span Wind  :
+          br
+          span Dew Point  :
+          br
+          span Visibility  :
+
+     - each weatherCondition in  weatherConditions
+       div.sidebyside
+        p 
+          h2  #{ weatherCondition.current_observation.display_location.full } - #{weatherCondition.current_observation.display_location.country}
+          br
+          img(src= '#{ weatherCondition.current_observation.icon_url }')
+          br
+          span.element #{ weatherCondition.current_observation.weather}
+          br
+          span.element #{ weatherCondition.current_observation.temperature_string}
+          br
+          span #{ weatherCondition.current_observation.local_time_rfc822}
+          br
+          span feels like #{ weatherCondition.current_observation.feelslike_string}
+          br
+          span #{ weatherCondition.current_observation.relative_humidity}
+          br
+          span #{ weatherCondition.current_observation.wind_string}
+          br
+          span #{ weatherCondition.current_observation.dewpoint_string}
+          br
+          span #{weatherCondition.current_observation.visibility_mi}

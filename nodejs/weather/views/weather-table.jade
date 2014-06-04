@@ -1,0 +1,33 @@
+extends layout
+
+block content
+
+   div 
+    table
+     thead
+       tr
+        th Location
+        th Time 
+        th Weather Icon
+        th Weather 
+        th Temperature
+        th Feels like  
+        th Relative Humidity
+        th Wind
+        th Dew Point
+        th Visibility (miles)
+
+     tbody
+      - each weatherCondition in weatherConditions
+       tr
+        td #{weatherCondition.current_observation.display_location.full} - #{weatherCondition.current_observation.display_location.country}
+        td #{ weatherCondition.current_observation.local_time_rfc822}
+        td 
+         img(src= '#{weatherCondition.current_observation.icon_url}')
+        td #{ weatherCondition.current_observation.weather} 
+        td #{ weatherCondition.current_observation.temperature_string}
+        td feels like #{ weatherCondition.current_observation.feelslike_string}
+        td #{ weatherCondition.current_observation.relative_humidity}
+        td #{ weatherCondition.current_observation.wind_string}
+        td #{ weatherCondition.current_observation.dewpoint_string}
+        td #{weatherCondition.current_observation.visibility_mi}

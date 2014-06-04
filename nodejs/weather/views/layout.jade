@@ -1,0 +1,34 @@
+doctype html
+html
+  head
+    title= 'Weather Application'
+    link(rel='stylesheet', href='/stylesheets/style.css')
+  body
+   div
+    div 
+     div.logo
+      p powered by 
+      img(src='http://icons-ak.wxug.com/graphics/wu2/logo_130x80.png')  
+     div.head 
+      h1.heading Weather Application 
+     br
+     br
+     br
+     br
+     br
+     div
+     div.center
+      ul
+       li
+        a(href='/')  Home
+       li
+        a(href='/weather/get')  GET Weather Request
+       li
+        a(href='/weather/post')  POST Weather Request 
+       li
+        a(href='/weather/conditions/current/fourcities')  Weather data for 4 cities in table format
+       li
+        a(href='/weather/conditions/current/fourcities?format=list')  Weather data for 4 cities in list format
+
+     br
+    block content

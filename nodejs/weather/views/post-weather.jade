@@ -1,0 +1,16 @@
+extends layout
+
+block content
+
+ div
+  h4 Enter the city or State in the text box correspondingly :
+ 
+ form(name="weatherForm", action="/weather/conditions/current", method="POST")
+    h4 City : 
+     input(type="text", name="city")
+    h4 State : 
+     input(type="text", name="state")
+    div
+     input(type="hidden",name="format",value="table")  
+    br
+    input(type="submit", value="post")

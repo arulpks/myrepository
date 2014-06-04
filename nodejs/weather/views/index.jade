@@ -1,0 +1,22 @@
+extends layout
+
+block content
+     
+    div.content
+       h2 This is a simple application for getting weather conditions from underground weather site using an api. It makes rest calls and gets the weather information.
+       
+        p 
+         h4 Example :
+          
+         p URL Format for the Rest API :- http://api.wunderground.com/api/a8b8e803c1476203/conditions/q/CA/San_Francisco.json
+
+    div 
+      h4 Input : http://localhost:3000/weather/conditions/current?city=San+Francisco&state=CA
+      h4 Output: The weather data displayed in table format.
+      img(src='../images/weathertable.png') 
+
+      h4 Input : http://localhost:3000/weather/conditions/current?city=San+Francisco&state=CA&format=list
+      h4 Output: The weather data displayed in list table format.
+      img(src='../images/listtable.png')   
+
+    
